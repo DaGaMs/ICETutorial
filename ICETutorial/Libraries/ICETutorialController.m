@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Patrick Trillsam. All rights reserved.
 //
 
-#import "ICETutorialController.h"
-
+#import "ICETutorial.h"
 
 @interface ICETutorialController ()
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
