@@ -42,20 +42,21 @@
 		80A29000171156F6004EA534 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ICETutorialController_iPad.xib; sourceTree = "<group>"; };
 		80A29002171156F6004EA534 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ICETutorialController_iPhone.xib; sourceTree = "<group>"; };
 		80A2901B171156F6004EA534 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		80A2904717115756004EA534 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		80A2904817115756004EA534 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		80A2904917115756004EA534 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		80A2904717115756004EA534 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		80A2904817115756004EA534 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = SOURCE_ROOT; };
+		80A2904917115756004EA534 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		80A2907F171157B9004EA534 /* ICETutorial-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ICETutorial-Info.plist"; sourceTree = "<group>"; };
 		80A29080171157B9004EA534 /* ICETutorial-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ICETutorial-Prefix.pch"; sourceTree = "<group>"; };
-		80A2909617116331004EA534 /* tutorial_background_00@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_00@2x.jpg"; sourceTree = "<group>"; };
-		80A2909717116331004EA534 /* tutorial_background_01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_01@2x.jpg"; sourceTree = "<group>"; };
-		80A2909817116331004EA534 /* tutorial_background_02@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_02@2x.jpg"; sourceTree = "<group>"; };
-		80A2909917116331004EA534 /* tutorial_background_03@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_03@2x.jpg"; sourceTree = "<group>"; };
-		80A2909A17116331004EA534 /* tutorial_background_04@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "tutorial_background_04@2x.jpg"; sourceTree = "<group>"; };
-		80A290A01711660E004EA534 /* button-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background.png"; sourceTree = "<group>"; };
-		80A290A11711660E004EA534 /* button-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-background@2x.png"; sourceTree = "<group>"; };
-		80A290A4171170FF004EA534 /* background-gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-gradient.png"; sourceTree = "<group>"; };
-		80A290A5171170FF004EA534 /* background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-gradient@2x.png"; sourceTree = "<group>"; };
+		80A2909617116331004EA534 /* tutorial_background_00@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tutorial_background_00@2x.jpg"; path = "Resources/tutorial_background_00@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		80A2909717116331004EA534 /* tutorial_background_01@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tutorial_background_01@2x.jpg"; path = "Resources/tutorial_background_01@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		80A2909817116331004EA534 /* tutorial_background_02@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tutorial_background_02@2x.jpg"; path = "Resources/tutorial_background_02@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		80A2909917116331004EA534 /* tutorial_background_03@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tutorial_background_03@2x.jpg"; path = "Resources/tutorial_background_03@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		80A2909A17116331004EA534 /* tutorial_background_04@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "tutorial_background_04@2x.jpg"; path = "Resources/tutorial_background_04@2x.jpg"; sourceTree = SOURCE_ROOT; };
+		80A290A01711660E004EA534 /* button-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-background.png"; path = "Resources/button-background.png"; sourceTree = SOURCE_ROOT; };
+		80A290A11711660E004EA534 /* button-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-background@2x.png"; path = "Resources/button-background@2x.png"; sourceTree = SOURCE_ROOT; };
+		80A290A4171170FF004EA534 /* background-gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-gradient.png"; path = "Resources/background-gradient.png"; sourceTree = SOURCE_ROOT; };
+		80A290A5171170FF004EA534 /* background-gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-gradient@2x.png"; path = "Resources/background-gradient@2x.png"; sourceTree = SOURCE_ROOT; };
+		CA7E29C617C92F2400961BAE /* ICETutorial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICETutorial.h; sourceTree = "<group>"; };
 		CDC0638717006175004E4142 /* ICETutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICETutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC0638A17006175004E4142 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CDC0638C17006175004E4142 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +80,7 @@
 		0C6833CB1747B7B8004F9123 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				CA7E29C617C92F2400961BAE /* ICETutorial.h */,
 				0C6833CC1747B7B8004F9123 /* ICETutorialController.h */,
 				0C6833CD1747B7B8004F9123 /* ICETutorialController.m */,
 				0C6833CF1747B831004F9123 /* ICETutorialPage.h */,
@@ -103,7 +105,7 @@
 			path = ICETutorial;
 			sourceTree = "<group>";
 		};
-		80A2904417115756004EA534 /* Ressources */ = {
+		80A2904417115756004EA534 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				80A290A4171170FF004EA534 /* background-gradient.png */,
@@ -119,13 +121,14 @@
 				80A2904817115756004EA534 /* Default.png */,
 				80A2904917115756004EA534 /* Default@2x.png */,
 			);
+			name = Resources;
 			path = Ressources;
 			sourceTree = "<group>";
 		};
 		CDC0637E17006174004E4142 = {
 			isa = PBXGroup;
 			children = (
-				80A2904417115756004EA534 /* Ressources */,
+				80A2904417115756004EA534 /* Resources */,
 				0C6833CB1747B7B8004F9123 /* Libraries */,
 				80A28FF4171156F6004EA534 /* ICETutorial */,
 				CDC0638917006175004E4142 /* Frameworks */,

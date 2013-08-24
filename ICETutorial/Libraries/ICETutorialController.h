@@ -26,63 +26,49 @@ typedef NS_OPTIONS(NSUInteger, ScrollingState) {
     ScrollingStateLooping   = 1 << 2,
 };
 
-typedef void (^ButtonBlock)(UIButton *button);
+@class ICETutorialController;
+@class ICETutorialPage;
+@protocol ICETutorialDelegate <NSObject>
+
+@optional
+-(void)tutorialControllerLeftButtonPressed:(ICETutorialController *)controller;
+-(void)tutorialControllerRightButtonPressed:(ICETutorialController *)controller;
+-(void)tutorialController:(ICETutorialController *)controller willTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage;
+-(void)tutorialController:(ICETutorialController *)controller didTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage;
+-(void)tutorialControllerReachedLastPage:(ICETutorialController *)controller;
+@end
 
 @interface ICETutorialController : UIViewController <UIScrollViewDelegate> {
-    __weak IBOutlet UIImageView *_backLayerView;
-    __weak IBOutlet UIImageView *_frontLayerView;
-    __weak IBOutlet UILabel *_overlayTitle;
-    __weak IBOutlet UIScrollView *_scrollView;
-    __weak IBOutlet UIPageControl *_pageControl;
-    
     CGSize _windowSize;
-    ScrollingState _currentState;
-    
-    NSArray *_pages;
-    int _currentPageIndex;
-    
-    BOOL _autoScrollEnabled;
-    BOOL _autoScrollLooping;
-    CGFloat _autoScrollDurationOnPage;
-    
-    ICETutorialLabelStyle *_commonPageSubTitleStyle;
-    ICETutorialLabelStyle *_commonPageDescriptionStyle;
-    
-    ButtonBlock _button1Block;
-    ButtonBlock _button2Block;
+    NSUInteger _previousPageIndex;
+    NSUInteger _currentPageIndex;
 }
 
 @property (nonatomic, assign) BOOL autoScrollEnabled;
 @property (nonatomic, assign) BOOL autoScrollLooping;
 @property (nonatomic, assign) CGFloat autoScrollDurationOnPage;
+@property (nonatomic, strong) NSString *overlayTitle;
+@property (nonatomic, strong) NSString *leftButtonTitle;
+@property (nonatomic, strong) NSString *rightButtonTitle;
 @property (nonatomic, retain) ICETutorialLabelStyle *commonPageSubTitleStyle;
 @property (nonatomic, retain) ICETutorialLabelStyle *commonPageDescriptionStyle;
+@property (nonatomic, strong) NSArray *pages;
+@property (nonatomic, assign, readonly) ScrollingState currentState;
+@property (nonatomic, weak) id<ICETutorialDelegate> delegate;
 
 // Inits.
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil;
-- (id)initWithNibName:(NSString *)nibNameOrNil
-               bundle:(NSBundle *)nibBundleOrNil
-             andPages:(NSArray *)pages;
-- (id)initWithNibName:(NSString *)nibNameOrNil
-               bundle:(NSBundle *)nibBundleOrNil
-                pages:(NSArray *)pages
-         button1Block:(ButtonBlock)block1
-         button2Block:(ButtonBlock)block2;
 
-// Actions.
-- (void)setButton1Block:(ButtonBlock)block;
-- (void)setButton2Block:(ButtonBlock)block;
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+                pages:(NSArray *)pages;
 
 // Pages management.
-- (void)setPages:(NSArray*)pages;
 - (NSUInteger)numberOfPages;
 
 // Scrolling.
 - (void)startScrolling;
 - (void)stopScrolling;
-
-// State.
-- (ScrollingState)getCurrentState;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ICETutorialController.h"
 
 @implementation AppDelegate
 
@@ -52,31 +51,21 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[ICETutorialController alloc] initWithNibName:@"ICETutorialController_iPhone"
                                                                       bundle:nil
-                                                                    andPages:tutorialLayers];
+                                                                       pages:tutorialLayers];
     } else {
         self.viewController = [[ICETutorialController alloc] initWithNibName:@"ICETutorialController_iPad"
                                                                       bundle:nil
-                                                                    andPages:tutorialLayers];
+                                                                       pages:tutorialLayers];
     }
+    self.viewController.delegate = self;
+    self.viewController.overlayTitle = @"Main Title";
+    self.viewController.leftButtonTitle = @"Do nothing";
+    self.viewController.rightButtonTitle = @"Stop";
     
     // Set the common styles, and start scrolling (auto scroll, and looping enabled by default)
     [self.viewController setCommonPageSubTitleStyle:subStyle];
     [self.viewController setCommonPageDescriptionStyle:descStyle];
 
-    // Set button 1 action.
-    [self.viewController setButton1Block:^(UIButton *button){
-        NSLog(@"Button 1 pressed.");
-    }];
-    
-    // Set button 2 action, stop the scrolling.    
-    __unsafe_unretained typeof(self) weakSelf = self;
-    [self.viewController setButton2Block:^(UIButton *button){
-        NSLog(@"Button 2 pressed.");
-        NSLog(@"Auto-scrolling stopped.");
-        
-        [weakSelf.viewController stopScrolling];
-    }];
-    
     // Run it.
     [self.viewController startScrolling];
     
@@ -110,6 +99,28 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - ICETutorialDelegate
+- (void)tutorialControllerLeftButtonPressed:(ICETutorialController *)controller {
+    NSLog(@"Left Button pressed");
+}
+
+- (void)tutorialControllerRightButtonPressed:(ICETutorialController *)controller {
+    NSLog(@"Right button pressed");
+    [self.viewController stopScrolling];
+}
+
+- (void)tutorialController:(ICETutorialController *)controller willTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage {
+    NSLog(@"Will transition from %d to %d", fromPage, toPage);
+}
+
+- (void)tutorialController:(ICETutorialController *)controller didTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage {
+    NSLog(@"Did transition from %d to %d", fromPage, toPage);
+}
+
+- (void)tutorialControllerReachedLastPage:(ICETutorialController *)controller {
+    NSLog(@"Reached last page (and not autoscrolling)");
 }
 
 @end

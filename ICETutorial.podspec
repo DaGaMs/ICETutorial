@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name = 'ICETutorial'
-  s.version = '1.0.2'
+  s.version = '1.0.3'
   s.summary = 'An implementation of the in-app tutorial as seen e.g. in Path 3'
   s.homepage = 'http://icepat.github.io/ICETutorial'
   s.license = {
     :type => 'MIT',
     :file => 'LICENSE'
   }
-  s.author = 'Patrick Trillsam'
+  s.author = 'Patrick Trillsam, Benjamin Schuster-Boeckler'
   s.source = {
     :git => 'https://github.com/DaGaMs/ICETutorial.git',
     :tag => '1.0.2'

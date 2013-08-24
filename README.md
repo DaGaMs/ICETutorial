@@ -2,7 +2,7 @@ ICETutorial
 ===========
 
 ### Welcome to ICETutorial.
-This small project is an implementation of the newly tutorial introduced by the Path 3.X app.
+This small project is an implementation of the tutorial view introduced by the Path 3.X app.
 Very simple and efficient tutorial, composed with N full-screen pictures that you can swipe for switching to the next/previous page.
 
 Here are the features :
@@ -11,7 +11,6 @@ Here are the features :
 * Scrolling sub-titles for page, with associated descriptions (change the texts, font, color...)
 * Auto-scrolling (enable/disable, loop, setup duration)
 * Cross fade between next/previous background
-* Easy to use block access to button's events.
 
 ![ICETutorial](https://github.com/icepat/ICETutorial/blob/master/screen_shot.jpg?raw=true)
 
@@ -55,42 +54,36 @@ All the available settings for the scrolling are located in the header : ICETuto
 ```objective-c
     self.viewController = [[ICETutorialController alloc] initWithNibName:@"ICETutorialController_iPhone"
                                                                   bundle:nil
-                                                                andPages:tutorialLayers];
+                                                                   pages:tutorialLayers];
 
     // Set the common styles, and start scrolling (auto scroll, and looping enabled by default)
     [self.viewController setCommonPageSubTitleStyle:subStyle];
     [self.viewController setCommonPageDescriptionStyle:descStyle];
-
-    // Set button 1 action.
-    [self.viewController setButton1Block:^(UIButton *button){
-        NSLog(@"Button 1 pressed.");
-    }];
-    
-    // Set button 2 action, stop the scrolling.    
-    __unsafe_unretained typeof(self) weakSelf = self;
-    [self.viewController setButton2Block:^(UIButton *button){
-        NSLog(@"Button 2 pressed.");
-        NSLog(@"Auto-scrolling stopped.");
-        
-        [weakSelf.viewController stopScrolling];
-    }];
-
+	
+	// The ICETutorialController will notify the delegate when a page is flipped or a button is pressed
+	self.viewController.delegate = self;
+	// Customize the headline and button labels
+	self.viewController.overlayTitle = @"Main Title";
+	self.viewController.leftButtonTitle = @"Do nothing";
+	self.viewController.rightButtonTitle = @"Stop";
+	
+	// add the viewController to the view hierarchy, e.g. if we're in the app delegate
+	self.window.rootViewController = self.viewController;
+	
     // Run it.
     [self.viewController startScrolling];
 ```
 
-**The title is located in the ICETutorial.m :**
+**There are a number of delegate methods you can optionally implement: **
 ```objective-c
-// Setup the Title Label.
-- (void)setOverlayTitle{
-    // ...or change by an UIImageView if you need it.
-    [_overlayTitle setText:@"Welcome"];
-}
+	-(void)tutorialControllerLeftButtonPressed:(ICETutorialController *)controller;
+	-(void)tutorialControllerRightButtonPressed:(ICETutorialController *)controller;
+	-(void)tutorialController:(ICETutorialController *)controller willTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage;
+	-(void)tutorialController:(ICETutorialController *)controller didTransitionFromPageIndex:(NSUInteger)fromPage toPageIndex:(NSUInteger)toPage;
+	-(void)tutorialControllerReachedLastPage:(ICETutorialController *)controller;
 ```
 
-Checkout the others projects available on my account [@Icepat](https://github.com/icepat/).
-
-Questions or ideas : patrick.trillsam@gmail.com.
+Originally developed by [@Icepat](https://github.com/icepat/) (email patrick.trillsam\_at\_gmail.com if you have questions).
 
 
 ###License :

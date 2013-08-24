@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ICETutorial.h"
 
-@class ICETutorialController;
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, ICETutorialDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ICETutorialController *viewController;
