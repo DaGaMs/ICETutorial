@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ICETutorial'
-  s.version = '1.0.3'
+  s.version = '1.1.0'
   s.summary = 'An implementation of the in-app tutorial as seen e.g. in Path 3'
   s.homepage = 'http://icepat.github.io/ICETutorial'
   s.license = {
