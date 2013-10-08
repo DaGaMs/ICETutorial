@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   }
   s.author = 'Patrick Trillsam, Benjamin Schuster-Boeckler'
   s.source = {
-    :git => 'https://github.com/DaGaMs/ICETutorial.git',
+    :git => 'https://github.com/icepat/ICETutorial.git',
     :tag => '1.0.2'
   }
   s.platform = :ios, '6.0'
